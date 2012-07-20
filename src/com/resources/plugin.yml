@@ -1,2 +1,5 @@
-## YAML Template.
----
+name: HeroesGUI
+descriptions: A Bomb-Ass Heroes Plugin GUI
+main: com.warcraftserver.heroesgui.HeroesGUI
+version: 0.0.1
+softdepend: [Spout, Permissions, PermissionsBukkit, Vault, PermissionsEx]

@@ -6,7 +6,7 @@
   <name>HeroesGUI</name>
   <description>GUI for Heroes Plugin</description>
   <build>
-    <sourceDirectory>${project.basedir}/src/</sourceDirectory>
+    <sourceDirectory>src/</sourceDirectory>
       <pluginManagement>
             <plugins>
                 <plugin>
@@ -23,7 +23,7 @@
         </pluginManagement>
 <resources>
 <resource>
-<directory>${project.basedir}/src/com/resources/</directory>
+<directory>src/com/resources/</directory>
 <includes>
 <include>plugin.yml</include>
 </includes>
