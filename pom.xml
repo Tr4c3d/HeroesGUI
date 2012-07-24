@@ -63,6 +63,11 @@
    <version>1.2.13-SNAPSHOT</version>
    </dependency>
    <dependency>
+   <groupId>com.herocraftonlin.heroes</groupId>
+   <artifactId>Heroes</artifactId>
+   <version>1.4.8-SNAPSHOT</version>
+   </dependency>
+   <dependency>
    <groupId>org.getspout</groupId>
    <artifactId>spoutpluginapi</artifactId>
    <version>dev-SNAPSHOT</version>
