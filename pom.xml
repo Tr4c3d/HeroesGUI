@@ -37,11 +37,6 @@
    <artifactId>bukkit</artifactId>
    </dependency>
    <dependency>
-   <groupId>net.milkbowl.vault</groupId>
-   <artifactId>Vault</artifactId>
-   <optional>true</optional>
-   </dependency>
-   <dependency>
    <groupId>org.getspout</groupId>
    <artifactId>spoutpluginapi</artifactId>
    </dependency>
@@ -58,14 +53,15 @@
    <version>1.2.5-R1.4-SNAPSHOT</version>
    </dependency>
    <dependency>
-   <groupId>net.milkbowl.vault</groupId>
-   <artifactId>Vault</artifactId>
-   <version>1.2.13-SNAPSHOT</version>
-   </dependency>
+    <groupId>net.milkbowl.vault</groupId>
+    <artifactId>Vault</artifactId>
+    <version>1.2.13-SNAPSHOT</version>
+    <scope>provided</scope>
+    </dependency>
    <dependency>
-   <groupId>com.herocraftonlin.heroes</groupId>
+   <groupId>com.herocraftonline.heroes</groupId>
    <artifactId>Heroes</artifactId>
-   <version>1.4.8-SNAPSHOT</version>
+   <version>1.4.9-b1534</version>
    </dependency>
    <dependency>
    <groupId>org.getspout</groupId>
@@ -85,8 +81,8 @@
             <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>Herocraft-repo</id>
-            <url>http://ci.herocraftonline.com/plugin/repository/everything/</url>
+            <id>Heroes-repo</id>
+            <url>http://ci.herocraftonline.com/job/Heroes/lastSuccessfulBuild/artifact/build/Heroes.jar</url>
         </repository>
         <repository>
             <id>spout-repo</id>
