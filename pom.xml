@@ -6,7 +6,7 @@
   <name>HeroesGUI</name>
   <description>GUI for Heroes Plugin</description>
   <build>
-    <sourceDirectory>src/</sourceDirectory>
+    <sourceDirectory>${project.basedir}/src/</sourceDirectory>
       <pluginManagement>
             <plugins>
                 <plugin>
@@ -23,7 +23,7 @@
         </pluginManagement>
 <resources>
 <resource>
-<directory>src/com/resources/</directory>
+<directory>${project.basedir}/src/</directory>
 <includes>
 <include>plugin.yml</include>
 </includes>
@@ -33,8 +33,15 @@
   
   <dependencies>
    <dependency>
-   <groupId>org.bukkit</groupId>
-   <artifactId>bukkit</artifactId>
+   <groupId>com.herocraftonline</groupId>
+   <artifactId>Heroes</artifactId>
+   <version>1.4.9-b1534</version>
+   </dependency>
+
+   <dependency>
+   <groupId>net.milkbowl.vault</groupId>
+   <artifactId>Vault</artifactId>
+   <optional>true</optional>
    </dependency>
    <dependency>
    <groupId>org.getspout</groupId>
@@ -53,16 +60,11 @@
    <version>1.2.5-R1.4-SNAPSHOT</version>
    </dependency>
    <dependency>
-    <groupId>net.milkbowl.vault</groupId>
-    <artifactId>Vault</artifactId>
-    <version>1.2.13-SNAPSHOT</version>
-    <scope>provided</scope>
-    </dependency>
-   <dependency>
-   <groupId>com.herocraftonline.heroes</groupId>
-   <artifactId>Heroes</artifactId>
-   <version>1.4.9-b1534</version>
+   <groupId>net.milkbowl.vault</groupId>
+   <artifactId>Vault</artifactId>
+   <version>1.2.13-SNAPSHOT</version>
    </dependency>
+
    <dependency>
    <groupId>org.getspout</groupId>
    <artifactId>spoutpluginapi</artifactId>
@@ -81,16 +83,35 @@
             <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>Heroes-repo</id>
-            <url>http://ci.herocraftonline.com/job/Heroes/lastSuccessfulBuild/artifact/build/Heroes.jar</url>
+            <id>Herocraft-repo</id>
+            <url>http://ci.herocraftonline.com/plugin/repository/everything/</url>
         </repository>
         <repository>
             <id>spout-repo</id>
             <url>http://repo.spout.org</url>
         </repository>
         <repository>
+          <id>HeroCraft-Heroes</id>
+          <url>http://ci.herocraftonline.com/plugin/repository/project/Heroes/</url>
+        </repository>
+        <repository>
           <id>warcraftserver</id>
           <url>http://kootopia.tk:8080/job/FiveStarProperties/lastSuccessfulBuild/artifact/target/</url>
-        </repository>
-    </repositories>
+        </repository><repository>
+    <id>WarCraftServer-Repo</id>
+    <url>http://69.64.42.221:8081/nexus/content/repositories/WarCraftServerDev/</url>
+  </repository>
+</repositories>
+  <distributionManagement>
+    <repository>
+      <id>WarCraftServerDev</id>
+      <name>public</name>
+      <url>http://69.64.42.221:8081/nexus/content/repositories/WarCraftServerDev/</url>
+    </repository>
+      <snapshotRepository>
+            <id>WarCraftServerDev-Snap</id>
+            <name>snapshots</name>
+            <url>http://69.64.42.221:8081/nexus/content/repositories/WarCraftServerDev/</url>
+        </snapshotRepository>
+  </distributionManagement>
 </project>

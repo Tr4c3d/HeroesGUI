@@ -1,5 +1,9 @@
 package com.warcraftserver.heroesgui.listeners;
 
+import com.herocraftonline.heroes.api.HeroDamageCause;
+import com.herocraftonline.heroes.api.events.CharacterDamageEvent;
+import com.herocraftonline.heroes.api.events.SkillDamageEvent;
+import com.herocraftonline.heroes.api.events.WeaponDamageEvent;
 import com.warcraftserver.heroesgui.HeroesGUI;
 import com.warcraftserver.heroesgui.gui.GUIManager;
 import com.warcraftserver.heroesgui.gui.MainMenu;
@@ -7,6 +11,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.entity.EntityRegainHealthEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.event.input.KeyBindingEvent;
 import org.getspout.spoutapi.event.input.KeyPressedEvent;
@@ -86,6 +92,61 @@ public class KeyPressedListener implements Listener {
         if(MainMenu.mainMenuInstance.containsKey(sp)){
             MainMenu mm = MainMenu.mainMenuInstance.get(sp);
             mm.close();
+        }
+    }
+    
+//    @EventHandler()
+//    public void onHeroAttacked(WeaponDamageEvent event){
+//        if(event.getEntity() instanceof Player){
+//            Player player = (Player)event.getEntity();
+//            if(MainMenu.mainMenuInstance.containsKey(SpoutManager.getPlayer(player))){
+//                MainMenu mm = MainMenu.mainMenuInstance.get(SpoutManager.getPlayer(player));
+//                mm.updateHealth();
+//            }
+//        }
+//    }
+//    
+//    @EventHandler()
+//    public void onHeroAttacked(SkillDamageEvent event){
+//        if(event.getEntity() instanceof Player){
+//            Player player = (Player)event.getEntity();
+//            if(MainMenu.mainMenuInstance.containsKey(SpoutManager.getPlayer(player))){
+//                MainMenu mm = MainMenu.mainMenuInstance.get(SpoutManager.getPlayer(player));
+//                mm.updateHealth();
+//            }
+//        }
+//    }
+//    
+//    @EventHandler()
+//    public void onHeroAttacked(CharacterDamageEvent event){
+//        if(event.getEntity() instanceof Player){
+//            Player player = (Player)event.getEntity();
+//            if(MainMenu.mainMenuInstance.containsKey(SpoutManager.getPlayer(player))){
+//                MainMenu mm = MainMenu.mainMenuInstance.get(SpoutManager.getPlayer(player));
+//                mm.updateHealth();
+//            }
+//        }
+//    }
+    
+    @EventHandler()
+    public void onHeroAttacked(EntityDamageEvent event){
+        if(event.getEntity() instanceof Player){
+            Player player = (Player)event.getEntity();
+            if(MainMenu.mainMenuInstance.containsKey(SpoutManager.getPlayer(player))){
+                MainMenu mm = MainMenu.mainMenuInstance.get(SpoutManager.getPlayer(player));
+                mm.updateHealth();
+            }
+        }
+    }
+    
+    @EventHandler()
+    public void onHeroHealed(EntityRegainHealthEvent event){
+        if(event.getEntity() instanceof Player){
+            Player player = (Player)event.getEntity();
+            if(MainMenu.mainMenuInstance.containsKey(SpoutManager.getPlayer(player))){
+                MainMenu mm = MainMenu.mainMenuInstance.get(SpoutManager.getPlayer(player));
+                mm.updateHealth();
+            }
         }
     }
 
